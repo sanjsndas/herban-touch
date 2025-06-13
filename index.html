@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Herban Touch Pruning Services - Professional Tree Care</title>
+<style>
+  /* Base Reset and Typography */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fafaf7;
+    color: #374151; /* neutral dark gray */
+    line-height: 1.7;
+    font-size: 18px;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #166534; /* dark green */
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    outline-offset: 2px;
+  }
+  img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.15);
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #14532d; /* a stronger green */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  small {
+    font-size: 14px;
+    color: #6b7280;
+  }
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  /* Header */
+  header {
+    background: #d9f99d; /* light lime green */
+    box-shadow: 0 1px 6px rgba(20, 83, 13, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #14532d;
+    letter-spacing: 2px;
+    user-select: none;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #4ade80; /* bright green accent */
+    color: #065f46;
+  }
+  /* Hero Section */
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    padding: 80px 24px 80px;
+    background: linear-gradient(135deg, #d9f99d 10%, #4ade80 90%);
+    color: #064e3b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero h1 {
+    font-size: 4.5rem;
+    max-width: 850px;
+    margin: 0 auto 24px;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  }
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-weight: 500;
+  }
+  .btn-primary {
+    background-color: #166534;
+    color: white;
+    border: none;
+    padding: 18px 48px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgb(22 101 52 / 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #4ade80;
+    color: #065f46;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgb(74 222 128 / 0.6);
+    outline: none;
+  }
+  /* Services Section */
+  section.services {
+    padding: 60px 24px 80px;
+    background: #f9faf7;
+  }
+  .services h2 {
+    text-align: center;
+    margin-bottom: 48px;
+    font-size: 2.75rem;
+    color: #14532d;
+  }
+  .services-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.07);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .service-card:hover,
+  .service-card:focus-within {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(22, 101, 52, 0.25);
+  }
+  .service-image {
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+  .service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #14532d;
+    margin-bottom: 12px;
+  }
+  .service-desc {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 20px;
+  }
+  .service-price {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #166534;
+  }
+  /* Large Content Section */
+  section.content-long {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    color: #374151;
+  }
+  section.content-long h2 {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+    color: #14532d;
+  }
+  section.content-long p, section.content-long ul li {
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+  section.content-long ul {
+    padding-left: 20px;
+  }
+  /* New Topics Section */
+  section.more-topics {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+    color: #374151;
+  }
+  section.more-topics h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: #14532d;
+  }
+  section.more-topics h3 {
+    font-size: 1.75rem;
+    color: #166534;
+    margin-bottom: 12px;
+  }
+  section.more-topics p, section.more-topics ul li {
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+  section.more-topics ul {
+    padding-left: 20px;
+  }
+  /* Gallery Section */
+  section.gallery {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 24px;
+  }
+  section.gallery h2 {
+    text-align: center;
+    font-size: 2.75rem;
+    margin-bottom: 48px;
+    color: #14532d;
+  }
+  .gallery-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(22, 101, 52, 0.12);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+  }
+  .gallery-item:hover,
+  .gallery-item:focus-within {
+    transform: scale(1.04);
+    box-shadow: 0 20px 44px rgba(22, 101, 52, 0.3);
+    outline: none;
+  }
+  .gallery-item:hover img,
+  .gallery-item:focus-within img {
+    transform: scale(1.1);
+  }
+  /* Lightbox modal */
+  #lightboxOverlay {
+    position: fixed;
+    display: none;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+  }
+  #lightboxOverlay.active {
+    display: flex;
+  }
+  #lightboxContent {
+    max-width: 900px;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    overflow: hidden;
+    position: relative;
+  }
+  #lightboxImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+  #lightboxCaption {
+    color: #d9f99d;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background: #14532d;
+    font-weight: 600;
+    text-align: center;
+  }
+  #lightboxCloseBtn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #4ade80;
+    border: none;
+    border-radius: 50%;
+    padding: 8px 13px;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    color: #065f46;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  #lightboxCloseBtn:hover,
+  #lightboxCloseBtn:focus {
+    background-color: #166534;
+    color: #d9f99d;
+    outline: none;
+  }
+  /* Disclaimer */
+  section.disclaimer {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding: 24px;
+    background-color: #ecfccb;
+    border-radius: 12px;
+    color: #4d7c0f;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 10px rgba(77,124,15,0.3);
+  }
+  /* Customer Satisfaction */
+  section.customer-satisfaction {
+    background: #dcfce7;
+    padding: 60px 24px;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+    color: #14532d;
+    box-shadow: 0 4px 24px rgba(22, 101, 52, 0.15);
+  }
+  section.customer-satisfaction h2 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  section.customer-satisfaction p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 600;
+  }
+  /* Footer */
+  footer {
+    background-color: #14532d;
+    color: #d9f99d;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  footer address {
+    font-style: normal;
+    line-height: 1.5;
+    font-weight: 600;
+    font-size: 1rem;
+    user-select: text;
+  }
+  /* Responsive Breakpoints */
+  @media (max-width: 640px) {
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+    .btn-primary {
+      padding: 14px 32px;
+      font-size: 1rem;
+    }
+    section.services {
+      padding: 40px 16px 60px;
+    }
+    section.content-long,
+    section.more-topics {
+      padding: 0 16px;
+    }
+  }
+  /* Special Effects */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  section.services, section.customer-satisfaction, section.content-long, section.disclaimer, section.more-topics, section.gallery {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+  }
+  section.services {
+    animation-delay: 0.3s;
+  }
+  section.content-long {
+    animation-delay: 0.6s;
+  }
+  section.more-topics {
+    animation-delay: 0.8s;
+  }
+  section.gallery {
+    animation-delay: 1s;
+  }
+  section.disclaimer {
+    animation-delay: 1.2s;
+  }
+  section.customer-satisfaction {
+    animation-delay: 1.4s;
+  }
+</style>
+</head>
+<body>
+<header role="banner" aria-label="Main navigation">
+  <div class="header-inner container">
+    <div class="logo" tabindex="0" aria-label="Herban Touch Pruning logo">Herban Touch</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" role="region" aria-label="Hero section introduction">
+    <h1>Herban Touch Pruning Services</h1>
+    <p>Professional tree care and pruning to beautify, maintain, and preserve your garden's natural health.</p>
+    <button class="btn-primary" aria-label="Get started with Herban Touch Pruning Services">Get Started</button>
+  </section>
+
+  <section id="services" class="services" role="region" aria-label="Our pruning services and prices">
+    <h2>Our Pruning Services</h2>
+    <div class="services-grid" role="list">
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Tree pruning service">
+        <img src="s1.png" alt="Professional gardener pruning leafy tree branches" class="service-image" />
+        <h3 class="service-title">Tree Pruning</h3>
+        <p class="service-desc">Precision pruning to promote healthy growth, structure, and longevity for your trees.</p>
+        <div class="service-price" aria-label="Starting price 150 dollars">$150+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Shrub trimming service">
+        <img src="s2.png" alt="Gardener trimming vibrant green bush with shears" class="service-image" />
+        <h3 class="service-title">Shrub Trimming</h3>
+        <p class="service-desc">Shaping and maintaining your shrubs for aesthetic and health benefits.</p>
+        <div class="service-price" aria-label="Starting price 75 dollars">$75+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Hedge shaping service">
+        <img src="s3.png" alt="Neatly shaped hedge in residential garden" class="service-image" />
+        <h3 class="service-title">Hedge Shaping</h3>
+        <p class="service-desc">Custom hedge shaping to enhance privacy and garden appeal.</p>
+        <div class="service-price" aria-label="Starting price 120 dollars">$120+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Deadwood removal service">
+        <img src="s4.png" alt="Gardener removing deadwood from tree branches" class="service-image" />
+        <h3 class="service-title">Deadwood Removal</h3>
+        <p class="service-desc">Removing dead or damaged branches to improve safety and tree health.</p>
+        <div class="service-price" aria-label="Starting price 80 dollars">$80+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Fruit tree pruning service">
+        <img src="s5.png" alt="Pruning apple tree branches in orchard" class="service-image" />
+        <h3 class="service-title">Fruit Tree Pruning</h3>
+        <p class="service-desc">Specialized pruning to increase fruit yield and tree vitality.</p>
+        <div class="service-price" aria-label="Starting price 180 dollars">$180+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Ornamental tree care service">
+        <img src="s6.png" alt="Carefully pruned ornamental tree with blooming flowers" class="service-image" />
+        <h3 class="service-title">Ornamental Tree Care</h3>
+        <p class="service-desc">Maintain beauty and health of decorative trees with expert pruning.</p>
+        <div class="service-price" aria-label="Starting price 200 dollars">$200+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Tree health inspection service">
+        <img src="s7.png" alt="Tree health inspection with specialist looking at bark" class="service-image" />
+        <h3 class="service-title">Tree Health Inspection</h3>
+        <p class="service-desc">Comprehensive tree inspection to prevent disease and degradation.</p>
+        <div class="service-price" aria-label="Starting price 100 dollars">$100+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Emergency pruning service">
+        <img src="s8.png" alt="Emergency pruning after storm with broken branches" class="service-image" />
+        <h3 class="service-title">Emergency Pruning</h3>
+        <p class="service-desc">Rapid response pruning to remove dangerous limbs and restore safety.</p>
+        <div class="service-price" aria-label="Starting price 250 dollars">$250+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Crown thinning service">
+        <img src="s9.png" alt="Selective crown thinning on mature tree" class="service-image" />
+        <h3 class="service-title">Crown Thinning</h3>
+        <p class="service-desc">Light thinning of tree canopy to reduce wind resistance and enhance light penetration.</p>
+        <div class="service-price" aria-label="Starting price 160 dollars">$160+</div>
+      </article>
+      <article class="service-card" role="listitem" tabindex="0" aria-label="Pollarding service">
+        <img src="10.png" alt="Pollarded urban tree in city street" class="service-image" />
+        <h3 class="service-title">Pollarding</h3>
+        <p class="service-desc">Regular pollarding technique to maintain tree size and shape in urban areas.</p>
+        <div class="service-price" aria-label="Starting price 140 dollars">$140+</div>
+      </article>
+    </div>
+  </section>
+
+    <section id="gallery" class="gallery" role="region" aria-label="Image gallery of pruning services and tree care">
+    <h2>Gallery of Our Work</h2>
+    <div class="gallery-grid">
+      <button class="gallery-item" aria-label="View image: Gardener pruning tall oak tree" tabindex="0">
+        <img src="g1.png" alt="Gardener pruning tall oak tree with specialized shears" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Shaped garden hedge" tabindex="0">
+        <img src="g2.png" alt="Neatly shaped garden hedge lining walkway" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Arborist inspecting tree health" tabindex="0">
+        <img src="g3.png" alt="Arborist inspecting tree health with magnifying glass" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Fruit tree orchard after pruning" tabindex="0">
+        <img src="g4.png" alt="Fruit tree orchard after expert pruning with ripe apples" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Hands using pruning shears on rose bush" tabindex="0">
+        <img src="g5.png" alt="Close-up of hands using pruning shears cutting rose bush" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Urban tree pollarding in street" tabindex="0">
+        <img src="g6.png" alt="Urban tree pollarded for size control on city street" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Deadwood removal from large tree" tabindex="0">
+        <img src="g7.png" alt="Removing deadwood from large mature tree branches" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Professional pruning tools on wooden bench" tabindex="0">
+        <img src="g8.png" alt="Professional pruning tools arranged on wooden bench" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Hedge shaping in public park" tabindex="0">
+        <img src="g9.png" alt="Happy gardener shaping hedge in public park" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Emergency pruning after storm" tabindex="0">
+        <img src="g10.png" alt="Emergency pruning after storm with broken branches removed" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Crown thinning on tall tree" tabindex="0">
+        <img src=".g11png" alt="Selective crown thinning on tall mature tree canopy" />
+      </button>
+      <button class="gallery-item" aria-label="View image: Ornamental garden tree pruning" tabindex="0">
+        <img src="g12.png" alt="Ornamental garden tree carefully pruned to perfect shape" />
+      </button>
+    </div>
+  </section>
+
+  <section id="content" class="content-long" role="main" aria-label="Detailed pruning service information">
+    <h2>Comprehensive Pruning Information</h2>
+    <p>Pruning is an essential practice for maintaining the health, safety, and aesthetics of your trees and shrubs. It involves selectively removing certain parts of plants, such as branches, buds, or roots, to improve plant structure, promote growth, enhance fruit production, and prevent potential hazards.</p>
+    <p>Herban Touch Pruning Services specializes in various pruning techniques tailored to the unique needs of your garden. Our professional team applies expert knowledge and modern equipment to ensure that each pruning job supports the long-term vitality of your greenery.</p>
+    <p>Proper pruning must be timed and executed carefully depending on the species, growth stage, and purpose. Incorrect or excessive pruning can lead to stress, disease, and damage. Therefore, we emphasize precision and respect for the natural growth patterns of your trees and plants.</p>
+    <p>Our service portfolio includes:</p>
+    <ul>
+      <li>Structural pruning to shape young trees, helping them grow strong and balanced.</li>
+      <li>Maintenance pruning to remove dead, diseased, or crossing branches in mature trees.</li>
+      <li>Fruit tree pruning to maximize yield and quality through controlled growth.</li>
+      <li>Hedge and shrub trimming to keep your garden tidy and visually appealing.</li>
+      <li>Emergency pruning services to address immediate safety concerns caused by storms or damage.</li>
+    </ul>
+    <p>We pride ourselves on sustainable and environmentally sound practices, utilizing the latest arboricultural standards and ethical techniques. Your satisfaction and your garden's well-being are at the core of everything we do.</p>
+  </section>
+
+  <section id="more-topics" class="more-topics" role="region" aria-label="Additional pruning topics">
+    <h2>Explore More Topics</h2>
+
+    <article>
+      <h3>Benefits of Regular Pruning</h3>
+      <p>Regular pruning provides multiple benefits including maintaining the structural integrity of trees, stimulating healthy growth, improving flowering and fruiting, and preventing potential hazards from dead or weak branches. It also enhances the overall aesthetic appeal of your garden and can increase property value.</p>
+      <p>Consistent pruning helps to prevent diseases by improving air circulation and sunlight penetration through the canopy, reducing fungal infections and pest infestations.</p>
+    </article>
+
+    <article>
+      <h3>Common Pruning Techniques</h3>
+      <p>At Herban Touch, we employ a variety of pruning techniques such as thinning, raising, reducing, and shaping, each suited for specific plant types and goals. Thinning removes selective branches to reduce density; raising lifts the canopy for clearance; reducing cuts back the size of a tree; and shaping controls the aesthetic form.</p>
+      <p>Our experts tailor these methods after assessing the garden’s needs for optimal results.</p>
+    </article>
+
+    <article>
+      <h3>Seasonal Pruning Guide</h3>
+      <p>Knowing the best time to prune is essential. Most deciduous trees are best pruned during dormancy in late winter, while flowering shrubs may require pruning right after blooming. Evergreen maintenance can be performed year-round but ideally during dry seasons to reduce disease risk.</p>
+      <p>Herban Touch offers seasonal consultation to ensure pruning is performed at the right time for your specific garden species.</p>
+    </article>
+
+    <article>
+      <h3>Tools and Equipment We Use</h3>
+      <p>Our arborists use state-of-the-art tools including precision hand pruners, loppers, saws, and safety climbing gear. We regularly maintain and sanitize equipment to ensure top performance and safety. Using the right tools for each pruning task prevents damage to trees and promotes clean cuts for rapid healing.</p>
+    </article>
+
+    <article>
+      <h3>Environmental Impact and Best Practices</h3>
+      <p>We are committed to environmentally responsible practices. Our pruning services promote biodiversity and sustainable gardening. We follow local guidelines for waste disposal and actively recycle organic materials. Additionally, we avoid over-pruning which can negatively affect ecosystems and plant health.</p>
+      <p>Through education and service, Herban Touch contributes to healthier, greener communities.</p>
+    </article>
+  </section>
+
+
+
+  <section id="disclaimer" class="disclaimer" role="region" aria-label="Disclaimer information">
+    <h2>Disclaimer</h2>
+    <p>Herban Touch Pruning Services strives to provide accurate and reliable information regarding tree and garden care. However, individual tree types, site conditions, and weather can affect pruning outcomes. We recommend consultation with our certified arborists for personalized advice.</p>
+    <p>All pruning services are conducted with care and professionalism, but Herban Touch cannot be held liable for unforeseen damage caused by natural factors beyond our control, including storms, pests, or diseases.</p>
+    <p>Customers should ensure their property is accessible and safe before service commencement and disclose any known hazards to our team.</p>
+  </section>
+
+  <section id="customer-satisfaction" class="customer-satisfaction" role="region" aria-label="Customer satisfaction section">
+    <h2>Your Satisfaction, Our Commitment</h2>
+    <p>At Herban Touch, customer satisfaction is at the heart of our work. We are dedicated to delivering outstanding service, transparent communication, and expert results that exceed your expectations. Our goal is to nurture long-lasting relationships by transforming your outdoor spaces into thriving, beautiful environments.</p>
+  </section>
+</main>
+
+<footer id="contact" role="contentinfo" aria-label="Contact and address">
+  <address>
+    5 Washington Square S,<br />
+    New York, NY 10012,<br />
+    USA
+  </address>
+</footer>
+
+<!-- Lightbox Modal for Gallery -->
+<div id="lightboxOverlay" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption">
+  <div id="lightboxContent">
+    <button id="lightboxCloseBtn" aria-label="Close enlarged image">&times;</button>
+    <img id="lightboxImage" src="" alt="" />
+    <div id="lightboxCaption"></div>
+  </div>
+</div>
+
+<script>
+  // Gallery Lightbox Script
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightboxOverlay = document.getElementById('lightboxOverlay');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+
+  function openLightbox(e) {
+    const img = e.currentTarget.querySelector('img');
+    if (!img) return;
+    lightboxImage.src = img.src;
+    lightboxImage.alt = img.alt;
+    lightboxCaption.textContent = img.alt;
+    lightboxOverlay.classList.add('active');
+    lightboxCloseBtn.focus();
+  }
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', openLightbox);
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(e);
+      }
+    });
+  });
+
+  function closeLightbox() {
+    lightboxOverlay.classList.remove('active');
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
+    lightboxCaption.textContent = '';
+  }
+
+  lightboxCloseBtn.addEventListener('click', closeLightbox);
+
+  lightboxOverlay.addEventListener('click', (e) => {
+    if (e.target === lightboxOverlay) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+</script>
+
+</body>
+</html>
+
